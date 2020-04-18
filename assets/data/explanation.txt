@@ -1,0 +1,18 @@
+bitmapWidth >= filterWidth 
+- if a bitmap larger than is needed for the filter already exists,
+  it will be used rather than creating a new one
+- if a bitmap does not exist or is too small, a new one will be created using
+  the size of the filter
+Regardless the UVs of the bitmap will be set to filterWidth, filterHeight
+
+filterWidth, filterHeight come from __getFilterBounds
+-> comes from __getBounds + all filter extensions
+-> comes from __graphics.__getBounds
+-> class variable Graphics.__bounds
+where does Graphics.__bounds get set/modified?
+clear() sets __bounds to null
+copyFrom() copies the __bounds from the source
+__inflateBounds(x,y) will create new bounds at (x,y) if they do not exist,
+and otherwise will expand the bounds to encompass (x,y)
+
+
