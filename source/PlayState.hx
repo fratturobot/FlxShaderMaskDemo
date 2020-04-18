@@ -11,8 +11,6 @@ import flixel.FlxCamera;
 import openfl.Vector;
 import openfl.display.BitmapData;
 
-using CameraExtension;
-
 @:access(flixel.FlxGame)
 class PlayState extends FlxState
 {
